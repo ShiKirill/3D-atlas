@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3d models</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS+JS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="../styles/page_styles.css">
+
+        <link rel="stylesheet" href="../styles/zoom.css">
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="../index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <!-- <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a> -->
+                </div>
+            </div>
+        </nav>
+
+        <div class="zoom_container hidden" id="tip-1">
+            <img id="bone1_original" class="original" src="../materials/struma/1.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-2">
+            <img id="bone2_original" class="original" src="../materials/struma/2.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-3">
+            <img id="bone3_original" class="original" src="../materials/struma/3.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-4">
+            <img id="bone4_original" class="original" src="../materials/struma/4.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-5">
+            <img id="bone5_original" class="original" src="../materials/struma/5.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-6">
+            <img id="bone6_original" class="original" src="../materials/struma/6.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-7">
+            <img id="bone7_original" class="original" src="../materials/struma/7.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-8">
+            <img id="bone8_original" class="original" src="../materials/struma/8.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-9">
+            <img id="bone9_original" class="original" src="../materials/struma/9.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-10">
+            <img id="bone10_original" class="original" src="../materials/struma/10.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-11">
+            <img id="bone11_original" class="original" src="../materials/struma/11.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-12">
+            <img id="bone12_original" class="original" src="../materials/struma/12.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-13">
+            <img id="bone13_original" class="original" src="../materials/struma/13.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-14">
+            <img id="bone14_original" class="original" src="../materials/struma/14.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-15">
+            <img id="bone15_original" class="original" src="../materials/struma/15.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-16">
+            <img id="bone16_original" class="original" src="../materials/struma/16.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-17">
+            <img id="bone17_original" class="original" src="../materials/struma/17.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-18">
+            <img id="bone18_original" class="original" src="../materials/struma/18.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-19">
+            <img id="bone19_original" class="original" src="../materials/struma/19.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-20">
+            <img id="bone20_original" class="original" src="../materials/struma/20.JPG">
+        </div>
+        <div class="zoom_container hidden" id="tip-21">
+            <img id="bone21_original" class="original" src="../materials/struma/21.JPG">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xs-12 my-carousel" id="my-carousel">
+
+                    <img
+                        src="../materials/struma/1.JPG"
+                        alt="1"
+                        data-tooltip="1"
+                        id="bone1"
+                        class="thumbnail my-carousel-img active wrong-rotation">
+                    <img
+                        src="../materials/struma/2.JPG"
+                        alt="2"
+                        data-tooltip="2"
+                        id="bone2"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/3.JPG"
+                        alt="3"
+                        data-tooltip="3"
+                        id="bone3"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/4.JPG"
+                        alt="4"
+                        data-tooltip="4"
+                        id="bone4"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/5.JPG"
+                        alt="5"
+                        data-tooltip="5"
+                        id="bone5"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/6.JPG"
+                        alt="6"
+                        data-tooltip="6"
+                        id="bone6"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/7.JPG"
+                        alt="7"
+                        data-tooltip="7"
+                        id="bone7"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/8.JPG"
+                        alt="8"
+                        data-tooltip="8"
+                        id="bone8"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/9.JPG"
+                        alt="9"
+                        data-tooltip="9"
+                        id="bone9"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/10.JPG"
+                        alt="10"
+                        data-tooltip="10"
+                        id="bone10"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/11.JPG"
+                        alt="11"
+                        data-tooltip="11"
+                        id="bone11"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/12.JPG"
+                        alt="12"
+                        data-tooltip="12"
+                        id="bone12"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/13.JPG"
+                        alt="13"
+                        data-tooltip="13"
+                        id="bone13"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/14.JPG"
+                        alt="14"
+                        data-tooltip="14"
+                        id="bone14"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/15.JPG"
+                        alt="15"
+                        data-tooltip="15"
+                        id="bone15"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/16.JPG"
+                        alt="16"
+                        data-tooltip="16"
+                        id="bone16"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/17.JPG"
+                        alt="17"
+                        data-tooltip="17"
+                        id="bone17"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/18.JPG"
+                        alt="18"
+                        data-tooltip="18"
+                        id="bone18"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/19.JPG"
+                        alt="19"
+                        data-tooltip="19"
+                        id="bone19"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/20.JPG"
+                        alt="20"
+                        data-tooltip="20"
+                        id="bone20"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                    <img
+                        src="../materials/struma/21.JPG"
+                        alt="21"
+                        data-tooltip="21"
+                        id="bone21"
+                        class="thumbnail my-carousel-img inactive wrong-rotation">
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <h3>Lorem, ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        <br>
+                        Rerum harum fugiat suscipit atque mollitia sunt nulla tempora qui consectetur
+                        sint?</p>
+                    <h5>Lorem, ipsum dolor.</h5>
+                    <ol>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maiores
+                            nihil unde, obcaecati consectetur rem!</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+        <!-- container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../js/carousel.js"></script>
+        <script src="../js/zoom.js"></script>
+
+    </body>
+</html>
