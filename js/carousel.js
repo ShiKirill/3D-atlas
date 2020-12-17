@@ -62,13 +62,9 @@ handleTouchStart = function(e) {
 		carousel.removeEventListener("touchmove", run_carousel);
 	}, false);
 }
+
 handle_pinch_zoom = function(ev) {
 
-<<<<<<< HEAD
-handle_pinch_zoom = function(ev) {
-
-=======
->>>>>>> e6392896d10c92bfa91187298f370de520491799
  if (ev.targetTouches.length == 2 && ev.changedTouches.length == 2) {
    // Check if the two target touches are the same ones that started
    // the 2-touch
@@ -95,9 +91,4 @@ handle_pinch_zoom = function(ev) {
 }
 
 carousel.addEventListener("touchstart", handleTouchStart, false);
-
 carousel.addEventListener("touchstart", handle_pinch_zoom, false);
-<<<<<<< HEAD
-
-=======
->>>>>>> e6392896d10c92bfa91187298f370de520491799
