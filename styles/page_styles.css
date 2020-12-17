@@ -20,5 +20,5 @@ img.wrong-rotation {
 }
 
 .my-carousel-img{
-    touch-action: pan-y pinch-zoom;
+    touch-action: double-tap-zoom;
 }
