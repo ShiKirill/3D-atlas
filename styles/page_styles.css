@@ -18,3 +18,7 @@ img.wrong-rotation {
 .active {
     display: block;
 }
+
+.my-carousel-img{
+    touch-action: pan-y pinch-zoom;
+}
