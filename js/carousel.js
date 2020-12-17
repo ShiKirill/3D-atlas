@@ -55,56 +55,64 @@ carousel.onmousedown = function(e) {
 
 handleTouchStart = function(e) {
 	e.preventDefault();
- if (e.targetTouches.length == 2 && e.changedTouches.length == 2) {
-		var point1=-1, point2=-1;
-   for (var i=0; i < tpCache.length; i++) {
-     if (tpCache[i].identifier == ev.targetTouches[0].identifier) point1 = i;
-     if (tpCache[i].identifier == ev.targetTouches[1].identifier) point2 = i;
-   }
-   if (point1 >=0 && point2 >= 0) {
-     // Calculate the difference between the start and move coordinates
-     var diff1 = Math.abs(tpCache[point1].clientX - ev.targetTouches[0].clientX);
-     var diff2 = Math.abs(tpCache[point2].clientX - ev.targetTouches[1].clientX);
-
-     // This threshold is device dependent as well as application specific
-     var PINCH_THRESHHOLD = ev.target.clientWidth / 10;
-     if (diff1 >= PINCH_THRESHHOLD && diff2 >= PINCH_THRESHHOLD)
-         ev.target.style.background = "green";
-   }
-	} else{
 	x = e.touches[0].pageX;
 	y = e.touches[0].pageY;			
 	carousel.addEventListener("touchmove", run_carousel, false);
 	document.addEventListener("touchend", function(e) {
 		carousel.removeEventListener("touchmove", run_carousel);
-	}, false);}
+	}, false);
 }
 
-// handle_pinch_zoom = function(ev) {
-
-//  if (ev.targetTouches.length == 2 && ev.changedTouches.length == 2) {
-//    // Check if the two target touches are the same ones that started
-//    // the 2-touch
-//    var point1=-1, point2=-1;
-//    for (var i=0; i < tpCache.length; i++) {
-//      if (tpCache[i].identifier == ev.targetTouches[0].identifier) point1 = i;
-//      if (tpCache[i].identifier == ev.targetTouches[1].identifier) point2 = i;
-//    }
-//    if (point1 >=0 && point2 >= 0) {
-//      // Calculate the difference between the start and move coordinates
-//      var diff1 = Math.abs(tpCache[point1].clientX - ev.targetTouches[0].clientX);
-//      var diff2 = Math.abs(tpCache[point2].clientX - ev.targetTouches[1].clientX);
-
-//      // This threshold is device dependent as well as application specific
-//      var PINCH_THRESHHOLD = ev.target.clientWidth / 10;
-//      if (diff1 >= PINCH_THRESHHOLD && diff2 >= PINCH_THRESHHOLD)
-//          ev.target.style.background = "green";
-//    }
-//    else {
-//      // empty tpCache
-//      tpCache = new Array();
-//    }
-//  }
-// }
-
 carousel.addEventListener("touchstart", handleTouchStart, false);
+
+
+var objzoom = document.querySelector("active");
+var scaling = false;
+var dist = 0;
+var scale_factor = 1.0;
+var curr_scale = 1.0;
+var max_zoom = 8.0;
+var min_zoom = 0.5
+/*Пишем функцию, которая определяет расстояние меж пальцами*/
+function distance (p1, p2) {
+return (Math.sqrt(Math.pow((p1.clientX - p2.clientX), 2) + Math.pow((p1.clientY - p2.clientY), 2)));
+}
+/*Ловим начало косания*/
+objzoom.addEventListener('touchstart', function(evt) {
+evt.preventDefault();
+var tt = evt.targetTouches;
+if (tt.length >= 2) {
+dist = distance(tt[0], tt[1]);
+scaling = true;
+} else {
+scaling = false;
+}
+}, false);
+/*Ловим зумирование*/
+objzoom.addEventListener('touchmove', function(evt) {
+evt.preventDefault();
+var tt = evt.targetTouches;
+if (scaling) {
+curr_scale = distance(tt[0], tt[1]) / dist * scale_factor;
+objzoom.style.WebkitTransform = "scale(" + curr_scale + ", " + curr_scale + ")";
+}
+}, false);
+/*Ловим конец косания*/
+objzoom.addEventListener('touchend', function(evt) {
+var tt = evt.targetTouches;
+if (tt.length < 2) {
+scaling = false;
+if (curr_scale < min_zoom) {
+scale_factor = min_zoom;
+} else {
+if (curr_scale > max_zoom) {
+scale_factor = max_zoom;
+} else {
+scale_factor = curr_scale;
+}
+}
+objzoom.style.WebkitTransform = "scale(" + scale_factor + ", " + scale_factor + ")";
+} else {
+scaling = true;
+}
+}, false);
