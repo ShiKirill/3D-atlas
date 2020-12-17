@@ -54,7 +54,7 @@ carousel.onmousedown = function(e) {
 }
 
 handleTouchStart = function(e) {
-	//e.preventDefault();
+	e.preventDefault();
 	x = e.touches[0].pageX;
 	y = e.touches[0].pageY;			
 	carousel.addEventListener("touchmove", run_carousel, false);
@@ -62,5 +62,33 @@ handleTouchStart = function(e) {
 		carousel.removeEventListener("touchmove", run_carousel);
 	}, false);
 }
+handle_pinch_zoom = function(ev) {
+
+ if (ev.targetTouches.length == 2 && ev.changedTouches.length == 2) {
+   // Check if the two target touches are the same ones that started
+   // the 2-touch
+   var point1=-1, point2=-1;
+   for (var i=0; i < tpCache.length; i++) {
+     if (tpCache[i].identifier == ev.targetTouches[0].identifier) point1 = i;
+     if (tpCache[i].identifier == ev.targetTouches[1].identifier) point2 = i;
+   }
+   if (point1 >=0 && point2 >= 0) {
+     // Calculate the difference between the start and move coordinates
+     var diff1 = Math.abs(tpCache[point1].clientX - ev.targetTouches[0].clientX);
+     var diff2 = Math.abs(tpCache[point2].clientX - ev.targetTouches[1].clientX);
+
+     // This threshold is device dependent as well as application specific
+     var PINCH_THRESHHOLD = ev.target.clientWidth / 10;
+     if (diff1 >= PINCH_THRESHHOLD && diff2 >= PINCH_THRESHHOLD)
+         ev.target.style.background = "green";
+   }
+   else {
+     // empty tpCache
+     tpCache = new Array();
+   }
+ }
+}
 
 carousel.addEventListener("touchstart", handleTouchStart, false);
+
+carousel.addEventListener("touchstart", handle_pinch_zoom, false);
