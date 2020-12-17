@@ -54,7 +54,7 @@ carousel.onmousedown = function(e) {
 }
 
 handleTouchStart = function(e) {
-	e.preventDefault();
+	//e.preventDefault();
 	x = e.touches[0].pageX;
 	y = e.touches[0].pageY;			
 	carousel.addEventListener("touchmove", run_carousel, false);
