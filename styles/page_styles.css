@@ -18,7 +18,3 @@ img.wrong-rotation {
 .active {
     display: block;
 }
-
-.my-carousel-img{
-    touch-action: double-tap-zoom;
-}
