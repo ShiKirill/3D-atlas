@@ -24,9 +24,14 @@
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../styles/page_styles.css">
-
         <link rel="stylesheet" href="../styles/zoom.css">
+
+        <script src="../js/script.js" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
+        <script src="../js/carousel.js" defer></script>
+        <script src="../js/zoom.js" defer></script>
 
     </head>
 
@@ -41,18 +46,101 @@
                 aria-controls="navbarNavAltMarkup"
                 aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon sidebar-close"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" href="../index.html">Home
+                    <a class="nav-link active sidebar-close" href="../index.html">Главная страница
                         <span class="sr-only">(current)</span>
                     </a>
-                    <!-- <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a> -->
+                    <a class="nav-link sidebar-toggle" href="#">Атлас</a>
+                    <!-- <a class="nav-link" href="#">Pricing</a>  -->
                 </div>
             </div>
         </nav>
+
+        <aside class="sidebar">
+        <img src="../pictures/leftArrow.svg" class="sidebar-close-btn sidebar-close">
+        <ul class="sidebar-topics" id="sidebar-topics">
+            <li class="sidebar-topics-item">Атрофия
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Гидронефроз (1 вариант)</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Гидронефроз (2 вариант)</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Кистозные почки</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Буллезная эмфизема</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Болезни желудочно-кишечного тракта
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Хроническая язва желудка</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Болезни костно-мышечной системы
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Остеохондроз крестца</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Остеохондроз позвоночника</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Воспаление
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Фибринозный перикардит</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Казеозная пневмония</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Пневмосклероз</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Бронхопневмония</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Крупозная пневмония</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Милиарный туберкулез легких</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Гнойный менингит</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Цирроз печени</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Метастатический гнойный нефрит</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Флегмонозный аппендицит</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Гломерулонефрит</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Гипертрофия, гиперплазия, регенерация
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Гипертрофия миокарда</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Дистрофии
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="pages/struma.html">Зоб</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Некроз
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Гангрена пальцев рук</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Инфаркт миокарда</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Инфаркт легкого</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Опухоли
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Рак пищевода</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Рак легких</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Рак кишки</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Рак желудка</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Метастатический рак печени</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Гипертрофия простаты</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Фибромиома матки</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Патология периферического кровообращения
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Венозная гиперемия печени</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Атеросклероз аорты</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Аневризма аорты</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Кровоизлияния в мозг</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-topics-item">Пороки сердечно-сосудистой системы
+                <ul class="sidebar-topics-item-list" hidden>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Порок сердца ревматический</a></li>
+                    <li class="sidebar-topics-item-list-elem sidebar-close"><a href="#">Атеросклероз коронарных сосудов, аневризма сердца, пристеночный тромб</a></li>
+                </ul>
+            </li>    
+        </ul>
+        
+        </aside>
 
         <div class="zoom_container hidden" id="tip-1">
             <img id="bone1_original" class="original" src="../materials/struma/1.JPG">
@@ -267,9 +355,7 @@
 
         </div>
         <!-- container -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="../js/carousel.js"></script>
-        <script src="../js/zoom.js"></script>
+        
 
     </body>
 </html>
