@@ -25,6 +25,11 @@ overflow-y: auto;
   height: 1.2rem;
 }
 
+.sidebar-topics-item{
+  cursor: pointer;
+  margin-top: 0.3rem;
+}
+
 .sidebar-close-btn:hover{
   cursor: pointer;
   transform: scale(1.1);
