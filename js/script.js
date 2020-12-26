@@ -5,6 +5,7 @@ const navBarToggler = document.querySelector('.navbar-toggler');
 const navBarCollapse = document.querySelector('.navbar-collapse');
 const sideBarClose = document.querySelectorAll('.sidebar-close');
 const sideBarTopics = document.querySelector('.sidebar-topics');
+const sideBarTopicsItemList = document.querySelectorAll('.sidebar-topics-item-list');
 
 leftMenuToggle.addEventListener('click', event => {
     event.preventDefault();
@@ -17,6 +18,9 @@ leftMenuToggle.addEventListener('click', event => {
 
 sideBarClose.forEach(elem => elem.addEventListener('click', event => {
     leftMenu.classList.remove('visible');
+    sideBarTopicsItemList.forEach(el => {
+        el.hidden = true;
+    })
 }))
 
 for (let li of sideBarTopics.querySelectorAll('li')) {
