@@ -1,5 +1,5 @@
 .sidebar {
-width: 40%;
+width: 50%;
 position: fixed;
 z-index: 101;
 left: 0;
@@ -8,7 +8,7 @@ max-width: 450px;
 min-width: 200px;
 background-color: #fff;
 box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);
-padding: 1.5rem 1.5rem 1.5rem 1rem;
+padding: 1.5rem 20px 1.5rem 1rem;
 transform: translateX(-100%);
 transition: transform 0.2s;
 overflow-y: auto;
@@ -20,7 +20,7 @@ overflow-y: auto;
 .sidebar-close-btn{
   position: absolute;
   top: 1%;
-  right: 5%;
+  right: 2%;
   width: 1.2rem;
   height: 1.2rem;
 }
@@ -28,6 +28,13 @@ overflow-y: auto;
 .sidebar-topics-item{
   cursor: pointer;
   margin-top: 0.3rem;
+  line-height: 1;
+  
+  border-radius: 10px;
+}
+
+.sidebar-topics-item:hover{
+  background: rgba(111, 109, 109, 0.15);
 }
 
 .sidebar-close-btn:hover{
@@ -43,4 +50,32 @@ overflow-y: auto;
 
 .sidebar-topics-item-list{
   padding-left: 0.5rem;
+}
+
+.sidebar-topics-item span{
+  display: block;
+  padding: 0.5rem;
+}
+
+.sidebar-topics-item-list-link{
+  color: rgb(114, 114, 114);
+  
+}
+
+.sidebar-topics-item-list-link:hover{
+  color: rgb(90, 90, 90);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 700px){
+  html{
+  font-size: 85%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  html{
+  font-size: 80%;
+  }
 }
