@@ -58,12 +58,12 @@ overflow-y: auto;
 }
 
 .sidebar-topics-item-list-link{
-  color: rgb(114, 114, 114);
+  color: rgb(60, 60, 60);
   
 }
 
 .sidebar-topics-item-list-link:hover{
-  color: rgb(90, 90, 90);
+  color: rgb(60, 60, 60);
   text-decoration: none;
   font-weight: 700;
 }
