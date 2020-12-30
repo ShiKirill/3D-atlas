@@ -29,7 +29,7 @@ overflow-y: auto;
   cursor: pointer;
   margin-top: 0.3rem;
   line-height: 1;
-  
+  font-weight: 700;
   border-radius: 10px;
 }
 
@@ -50,11 +50,19 @@ overflow-y: auto;
 
 .sidebar-topics-item-list{
   padding-left: 0.5rem;
+  font-weight: 500;
 }
 
 .sidebar-topics-item span{
   display: block;
   padding: 0.5rem;
+}
+
+.sidebar-topics-item-list li:last-child::after{
+  content: "";
+  position: absolute;
+  width: 80%;
+  border-top: 1px solid rgb(189, 180, 180);
 }
 
 .sidebar-topics-item-list-link{
@@ -79,3 +87,4 @@ overflow-y: auto;
   font-size: 80%;
   }
 }
+
