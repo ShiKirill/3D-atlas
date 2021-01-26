@@ -10,7 +10,7 @@ function isMobileTablet(){
 
 if (!isMobileTablet()){
 var zoom_container_size = $( '.zoom_container').height();
-var zoom_area_size = 100;
+var zoom_area_size = 20;
 var zoom_radius = zoom_area_size / 2;
 
 $( '.thumbnail' ).mousemove(function(e) {
